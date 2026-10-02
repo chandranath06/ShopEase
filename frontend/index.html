@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopEase - Shop Smart, Live Easy</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-shopease sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand brand-logo" href="index.html"><i class="fa-solid fa-bag-shopping"></i> Shop<span>Ease</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html#categories">Categories</a></li>
+      </ul>
+      <form class="d-flex me-3 my-2 my-lg-0" onsubmit="event.preventDefault(); window.location.href='products.html?search=' + encodeURIComponent(this.q.value);">
+        <input class="form-control me-2" type="search" name="q" placeholder="Search products...">
+        <button class="btn btn-brand" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <div class="d-flex align-items-center gap-3">
+        <div id="navbarAuthSlot"></div>
+        <a href="cart.html" class="cart-icon-wrap">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 mb-3">Shop Smart. <br>Live <span style="color:var(--brand-primary)">Easy.</span></h1>
+        <p class="lead mb-4">Discover thousands of products across electronics, fashion, beauty and more — all in one place, at prices that make sense.</p>
+        <a href="products.html" class="btn btn-brand btn-lg px-4 me-2">Shop Now <i class="fa-solid fa-arrow-right ms-1"></i></a>
+        <a href="products.html#categories" class="btn btn-outline-brand btn-lg px-4" style="background:#fff;">Browse Categories</a>
+      </div>
+      <div class="col-lg-6 text-center d-none d-lg-block">
+        <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600" class="img-fluid rounded-4 shadow" alt="ShopEase hero banner showing shopping bags">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Special Offers strip -->
+<div class="bg-warning-subtle py-2 text-center fw-semibold">
+  <i class="fa-solid fa-tag me-2"></i>Special Offer: Free shipping on all orders above ₹999! <i class="fa-solid fa-truck-fast ms-2"></i>
+</div>
+
+<!-- Categories -->
+<section class="container py-5" id="categories">
+  <h2 class="section-title">Shop by Category</h2>
+  <div class="d-flex flex-wrap gap-2" id="categoryPillsHome"></div>
+</section>
+
+<!-- Featured products -->
+<section class="container py-4">
+  <h2 class="section-title">Featured Products</h2>
+  <div class="row g-4" id="featuredProducts">
+    <div class="loading-spinner-wrap w-100"><div class="spinner-border text-warning"></div></div>
+  </div>
+  <div class="text-center mt-4">
+    <a href="products.html" class="btn btn-outline-brand px-4">View All Products <i class="fa-solid fa-arrow-right ms-1"></i></a>
+  </div>
+</section>
+
+<!-- Why choose us -->
+<section class="container py-5">
+  <h2 class="section-title">Why Choose ShopEase</h2>
+  <div class="row text-center g-4">
+    <div class="col-md-3 col-6">
+      <div class="why-choose-icon"><i class="fa-solid fa-truck-fast"></i></div>
+      <h6 class="fw-bold">Fast Delivery</h6>
+      <p class="small text-muted">Get your orders delivered quickly and reliably.</p>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="why-choose-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <h6 class="fw-bold">Secure Payments</h6>
+      <p class="small text-muted">Your transactions are safe and encrypted.</p>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="why-choose-icon"><i class="fa-solid fa-rotate-left"></i></div>
+      <h6 class="fw-bold">Easy Returns</h6>
+      <p class="small text-muted">Hassle-free return and refund policy.</p>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="why-choose-icon"><i class="fa-solid fa-headset"></i></div>
+      <h6 class="fw-bold">24/7 Support</h6>
+      <p class="small text-muted">We're here to help, anytime you need us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-3">
+        <h5><i class="fa-solid fa-bag-shopping"></i> ShopEase</h5>
+        <p class="small">Your one-stop shop for everything you need, delivered with ease.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h5>About</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Contact</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">support@shopease.com</a></li>
+          <li><a href="#">+91 98765 43210</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Legal</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <p class="text-center small mb-0">&copy; 2026 ShopEase. Built for CodeAlpha Full Stack Development Internship - Task 1.</p>
+  </div>
+</footer>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/ui-helpers.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

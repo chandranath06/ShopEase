@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - ShopEase</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-shopease sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand brand-logo" href="index.html"><i class="fa-solid fa-bag-shopping"></i> Shop<span>Ease</span></a>
+    <div class="d-flex align-items-center gap-3 ms-auto">
+      <div id="navbarAuthSlot"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-4">
+  <h2 class="section-title">Checkout</h2>
+  <div class="row">
+    <div class="col-lg-7">
+      <div class="summary-box mb-4">
+        <h5 class="fw-bold mb-3"><i class="fa-solid fa-truck"></i> Shipping Information</h5>
+        <div id="checkoutAlert" class="alert alert-danger d-none"></div>
+        <form id="checkoutForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="ccEmail" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">PIN / ZIP Code</label>
+              <input type="text" class="form-control" id="pincode" pattern="[0-9]{6}" placeholder="6-digit PIN" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-control" id="street" placeholder="House no, street, area" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">City</label>
+              <input type="text" class="form-control" id="city" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">State</label>
+              <input type="text" class="form-control" id="state" required>
+            </div>
+          </div>
+
+          <h5 class="fw-bold mt-4 mb-3"><i class="fa-solid fa-credit-card"></i> Payment Method</h5>
+          <div class="form-check mb-2">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="payCOD" value="COD" checked>
+            <label class="form-check-label" for="payCOD">Cash on Delivery</label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="paymentMethod" id="payOnline" value="ONLINE">
+            <label class="form-check-label" for="payOnline">Online Payment (Simulated for demo)</label>
+          </div>
+          <div id="onlinePaymentBox" class="d-none border rounded-3 p-3 mb-3 bg-light">
+            <p class="small text-muted mb-2">This is a simulated payment for internship/demo purposes. No real transaction will occur.</p>
+            <input type="text" class="form-control mb-2" placeholder="Card Number (demo only)" maxlength="19">
+            <div class="d-flex gap-2">
+              <input type="text" class="form-control" placeholder="MM/YY">
+              <input type="text" class="form-control" placeholder="CVV" maxlength="3">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-brand w-100 py-2" id="placeOrderBtn">Place Order</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="summary-box">
+        <h5 class="fw-bold mb-3">Order Summary</h5>
+        <div id="checkoutItemsList" class="mb-3"></div>
+        <hr>
+        <div class="d-flex justify-content-between mb-2"><span>Subtotal</span><span id="ccSubtotal">₹0</span></div>
+        <div class="d-flex justify-content-between mb-2"><span>Shipping</span><span id="ccShipping">₹0</span></div>
+        <hr>
+        <div class="d-flex justify-content-between fw-bold fs-5"><span>Total</span><span id="ccTotal">₹0</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/ui-helpers.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
